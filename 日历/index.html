@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="rili.css" />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.box {
+				margin: 50px;
+			}
+			
+			/* 自定义日历样式 */
+			.rili-box-two {
+				border: 1px solid #46b8da;
+				width: 300px;
+				border-radius: 10px;
+				box-shadow: 5px 5px 10px #4cae4c;
+			}
+			
+			.rili-box-two .rili-day {
+				color: yellowgreen;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h2>first</h2>
+			<div id="first"></div>
+			<h2>two</h2>
+			<div id="two"></div>
+		</div>
+		
+		<script type="text/javascript" src="rili.js" ></script>
+		<script>
+			/**
+			 * id: 要渲染的节点位置
+			 * showAround： 是否在当前月显示前后两个月的日期  Boolean类型
+			 * riliBoxClass： 最外层div样式   Array类型或者String类型都可
+			 */
+			let first = new ChildClass({
+					id: document.getElementById('first'),
+					showAround: true
+			})
+			let two= new ChildClass({
+					id: document.getElementById('two'),
+					riliBoxClass: ['rili-box-two'], // 最外层div样式
+					
+			})
+		</script>
+	</body>
+</html>

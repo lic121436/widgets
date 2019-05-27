@@ -1,0 +1,128 @@
+/* 日历公共部分样式 */
+			.rili-box {
+				width: 250px;
+				height: 250px;
+				border: 1px solid #000;
+				padding: 10px;
+				overflow: hidden;
+			}
+			.rili-box * {
+				margin: 0;
+				padding: 0;
+			}
+			.rili-box ul {
+				list-style: none;
+			}
+			.rili-title {
+				display: flex;
+				justify-content: space-between;
+				border-bottom: 1px solid #eee;
+				padding-bottom: 5px;
+			}
+			.rili-left-month {
+				margin-right: 4px;
+				cursor: pointer;
+			}
+			.rili-left-month:before {
+				content: '';
+				display: inline-block;
+				width: 7px;
+		    height: 7px;
+		    border-top: 2px solid #CFCFCF;
+		    border-right: 2px solid #CFCFCF;
+		    transform: rotate(-135deg);
+			}
+			.rili-left-month:after {
+				content: '';
+				display: inline-block;
+				width: 7px;
+		    height: 7px;
+		    border-top: 2px solid #CFCFCF;
+		    border-right: 2px solid #CFCFCF;
+		    transform: rotate(-135deg);
+			}
+			.rili-left-day:after {
+				content: '';
+				display: inline-block;
+				width: 5px;
+		    height: 5px;
+		    border-top: 2px solid #CFCFCF;
+		    border-right: 2px solid #CFCFCF;
+		    transform: rotate(-135deg);
+			}
+			.rili-right-day:before {
+				content: '';
+				display: inline-block;
+				width: 5px;
+		    height: 5px;
+		    border-top: 2px solid #CFCFCF;
+		    border-right: 2px solid #CFCFCF;
+		    transform: rotate(45deg);
+			}
+			.rili-right-month:before {
+				content: '';
+				display: inline-block;
+				width: 7px;
+		    height: 7px;
+		    border-top: 2px solid #CFCFCF;
+		    border-right: 2px solid #CFCFCF;
+		    transform: rotate(45deg);
+			}
+			.rili-right-month:after {
+				content: '';
+				display: inline-block;
+				width: 7px;
+		    height: 7px;
+		    border-top: 2px solid #CFCFCF;
+		    border-right: 2px solid #CFCFCF;
+		    transform: rotate(45deg);
+			}
+			.rili-right-month {
+				margin-left: 4px;
+				cursor: pointer;
+			}
+			.rili-content {
+				font-size: 14px;
+				overflow: hidden;
+				height: 100%;
+			}
+			.rili-week {
+				margin-top: 10px;
+				/*display: flex;
+				justify-content: space-between;*/
+			}
+			.rili-week li{
+				width: 14.2%;
+				text-align: center;
+				float: left;
+			}
+			.rili-week:after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.rili-day {
+				margin-top: 10px;
+				height: 100%;
+			}
+			.rili-day li {
+				width: 14.2%;
+				height: 30px;
+				text-align: center;
+				float: left;
+				cursor: pointer;
+				line-height: 30px;
+				transition: all .3s;
+				-moz-user-select : none;
+			}
+			.rili-day li.clickActive {
+				background: #46b8da;
+				color: #fff;
+			}
+			.rili-day li.active {
+				background: #4cae4c;
+				color: #fff;
+			}
+			.rili-day li.disabled {
+				color: #ABABAB;
+			}

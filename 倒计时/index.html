@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+		<title></title>
+		<style>
+			.box {
+				margin: 200px auto;
+				font-size: 22px;
+				font-weight: 700;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box"></div>
+		<div class="box" id="box1"></div>
+		<div class="box" id="box2" style="color: green;"></div>
+	</body>
+	<script src="time.js"></script>
+	<script>
+		/*
+		 * id: 要渲染的节点
+		 * totalTime: 初始化倒计时， String类型 , 格式 00:00:00， 默认值24:00:00
+		 * hourMax： 规定分钟和秒数到0后，小时从何时开始， String类型， 默认值24
+		 * minuteMax: 规定秒数到0后，分钟从何时开始， String类型，默认值60
+		 * secondMax： 规定秒数到0后从何时开始倒计， String类型， 默认值60
+		 * endTimeFn： 倒计时完成后执行回调函数(00:00:00)， Function类型， 默认值null
+		 * loopTime： 是否到00:00:00后循环倒计， Boolean类型 ，默认值false，  不循环，只倒计一次
+		 * parseTime: 是否格式化00:00:00，Boolean类型， 默认值false， 不格式化， 格式为00:00:00，格式化以后，格式为0天0小时0分钟
+		 * appointTimeList: 指定时间执行回调函数， Array类型， 属性{ time:00:00:00, fn: null }， time为指定时间， fn为指定时间回调函数，回调出来的参数为当前指定的时间，默认值[]
+		 * 
+		 */
+		 new CountDown({
+		 	id: document.getElementById('box'),
+			hourMax: '0',
+			minuteMax: '0',
+			secondMax: '0',
+			totalTime: '00:00:00',
+			suspendTime: true,
+			appointTimeList: [
+				{ time: '00:00:00', fn: (res) => {console.log(`我是${res}指定的时间`)} },
+			]
+		})
+		new CountDown({
+			id: document.getElementById('box1'),
+			totalTime: '02:05:01',
+			loopTime: true,
+			parseTime: true,
+			endTimeFn: () => {
+				console.log('我执行完了')
+			},
+			appointTimeList: [
+				{ time: '00:00:01', fn: (res) => {console.log(`我是${res}指定的时间`)} },
+			]
+		})
+		new CountDown({
+			id: document.getElementById('box2'),
+			loopTime: true,
+			endTimeFn: () => {
+				console.log('我执行完了')
+			},
+			appointTimeList: [
+				{ time: '00:00:01', fn: (res) => {console.log(`我是${res}指定的时间`)} },
+			]
+		})
+	</script>
+</html>
